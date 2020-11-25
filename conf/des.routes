@@ -1,0 +1,4 @@
+# microservice specific routes
+
+GET        /enterprise/obligation-data/vrn/:vrn/VATC             uk.gov.hmrc.vatdeferralnewpaymentschemestub.controllers.ObligationsController.get(vrn: String)
+GET        /enterprise/financial-data/VRN/:vrn/VATC              uk.gov.hmrc.vatdeferralnewpaymentschemestub.controllers.FinancialDataController.get(vrn: String)
