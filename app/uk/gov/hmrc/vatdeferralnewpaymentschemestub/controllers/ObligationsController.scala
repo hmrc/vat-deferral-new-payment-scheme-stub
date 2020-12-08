@@ -19,7 +19,7 @@ class ObligationsController @Inject()(appConfig: AppConfig, cc: ControllerCompon
 
   def get(vrn: String): Action[AnyContent] = Action.async { implicit request =>
 
-    val response = scala.io.Source.fromFile(s"./conf/api-responses/get-obligations/vrn-$vrn.json").mkString
+    val response = scala.io.Source.fromFile(s"conf/api-responses/get-obligations/vrn-$vrn.json").mkString
     Future.successful(Ok(response))
   }
 }
