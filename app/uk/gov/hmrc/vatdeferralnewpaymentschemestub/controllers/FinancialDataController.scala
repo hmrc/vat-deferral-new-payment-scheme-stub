@@ -18,7 +18,7 @@ class FinancialDataController @Inject()(appConfig: AppConfig, cc: ControllerComp
     extends BackendController(cc) {
 
   def get(vrn: String): Action[AnyContent] = Action.async { implicit request =>
-    val response = scala.io.Source.fromFile(s"./conf/api-responses/financial-data/vrn-$vrn.json").mkString
+    val response = scala.io.Source.fromFile(s"app/uk/gov/hmrc/vatdeferralnewpaymentschemestub/resources/financial-data/vrn-$vrn.json").mkString
     Future.successful(Ok(response))
   }
 }
