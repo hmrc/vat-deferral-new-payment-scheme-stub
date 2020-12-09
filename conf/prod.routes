@@ -1,6 +1,6 @@
 # Add all the application routes to the app.routes file
 ->         /vat-deferral-new-payment-scheme-stub              app.Routes
-->         /des                                               des.Routes
+->         /                                                  des.Routes
 ->         /                          health.Routes
 
 GET        /admin/metrics             com.kenshoo.play.metrics.MetricsController.metrics
