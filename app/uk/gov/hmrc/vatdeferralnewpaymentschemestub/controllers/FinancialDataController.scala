@@ -7,18 +7,13 @@ package uk.gov.hmrc.vatdeferralnewpaymentschemestub.controllers
 
 import javax.inject.{Inject, Singleton}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.vatdeferralnewpaymentschemestub.config.AppConfig
-import java.io.File
-
-import scala.concurrent.Future
 
 @Singleton()
 class FinancialDataController @Inject()(appConfig: AppConfig, cc: ControllerComponents)
-    extends BackendController(cc) {
+    extends BaseController(cc) {
 
-  def get(vrn: String): Action[AnyContent] = Action.async { implicit request =>
-    val response = scala.io.Source.fromResource(s"api-responses/financial-data/vrn-$vrn.json").mkString
-    Future.successful(Ok(response))
+  def get(vrn: String): Action[AnyContent] = Action {
+    responseFromFile(s"api-responses/financial-data/vrn-$vrn.json")
   }
 }

@@ -1,0 +1,12 @@
+{
+  "failures": [
+    {
+      "code": "INVALID_PAYLOAD",
+      "reason": "Submission has not passed validation. Invalid Payload."
+    },
+    {
+      "code": "INVALID_CORRELATIONID",
+      "reason": "Submission has not passed validation. Invalid Header CorrelationId."
+    }
+  ]
+}

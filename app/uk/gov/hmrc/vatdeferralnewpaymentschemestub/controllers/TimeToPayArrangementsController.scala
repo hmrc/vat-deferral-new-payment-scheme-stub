@@ -10,10 +10,10 @@ import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.vatdeferralnewpaymentschemestub.config.AppConfig
 
 @Singleton()
-class ObligationsController @Inject()(appConfig: AppConfig, cc: ControllerComponents)
+class TimeToPayArrangementsController @Inject()(appConfig: AppConfig, cc: ControllerComponents)
     extends BaseController(cc) {
 
   def get(vrn: String): Action[AnyContent] = Action {
-    responseFromFile(s"api-responses/get-obligations/vrn-$vrn.json")
+    responseFromFile(s"api-responses/time-to-pay-arrangement/vrn-$vrn.json")
   }
 }

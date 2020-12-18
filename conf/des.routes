@@ -2,3 +2,5 @@
 
 GET        /enterprise/obligation-data/vrn/:vrn/VATC             uk.gov.hmrc.vatdeferralnewpaymentschemestub.controllers.ObligationsController.get(vrn: String)
 GET        /enterprise/financial-data/VRN/:vrn/VATC              uk.gov.hmrc.vatdeferralnewpaymentschemestub.controllers.FinancialDataController.get(vrn: String)
+POST       /time-to-pay/02.00.00/vrn/:vrn/arrangements           uk.gov.hmrc.vatdeferralnewpaymentschemestub.controllers.TimeToPayArrangementsController.get(vrn: String)
+POST       /direct-debits/customers/:vrn/instructions/payment-plans uk.gov.hmrc.vatdeferralnewpaymentschemestub.controllers.DirectDebitController.get(vrn: String)

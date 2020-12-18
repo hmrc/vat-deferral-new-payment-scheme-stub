@@ -10,7 +10,7 @@ import play.api.test.{FakeRequest, Helpers}
 import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 import uk.gov.hmrc.vatdeferralnewpaymentschemestub.config.AppConfig
 
-class MicroserviceHelloWorldControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
+class DirectDebitControllerSpec extends AnyWordSpec with Matchers with GuiceOneAppPerSuite {
 
   private val fakeRequest = FakeRequest("GET", "/")
 
@@ -20,11 +20,11 @@ class MicroserviceHelloWorldControllerSpec extends AnyWordSpec with Matchers wit
   private val serviceConfig = new ServicesConfig(configuration)
   private val appConfig     = new AppConfig(configuration, serviceConfig)
 
-  private val controller = new MicroserviceHelloWorldController(appConfig, Helpers.stubControllerComponents())
+  private val controller = new DirectDebitController(appConfig, Helpers.stubControllerComponents())
 
   "GET /" should {
     "return 200" in {
-      val result = controller.hello()(fakeRequest)
+      val result = controller.get("100000000")(fakeRequest)
       status(result) shouldBe Status.OK
     }
   }
