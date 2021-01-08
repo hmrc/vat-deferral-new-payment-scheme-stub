@@ -3,7 +3,7 @@ import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
 
 val appName = "vat-deferral-new-payment-scheme-stub"
 
-PlayKeys.playDefaultPort := 8022
+PlayKeys.playDefaultPort := 8023
 
 val silencerVersion = "1.7.0"
 
