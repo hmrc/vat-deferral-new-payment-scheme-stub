@@ -21,10 +21,12 @@ import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.vatdeferralnewpaymentschemestub.config.AppConfig
 
 @Singleton()
-class DirectDebitController @Inject()(appConfig: AppConfig, cc: ControllerComponents)
-    extends BaseController(cc) {
+class VatCacheObligationsController @Inject()(
+  appConfig: AppConfig,
+  cc: ControllerComponents
+) extends BaseController(cc) {
 
   def get(vrn: String): Action[AnyContent] = Action {
-    responseFromFile(s"api-responses/direct-debit/vrn-$vrn.json")
+    responseFromFile(s"api-responses/get-vat-cache-obligations/vrn-$vrn.json")
   }
 }
