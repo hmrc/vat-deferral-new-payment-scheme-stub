@@ -1,0 +1,28 @@
+{
+  "obligations": [
+    {
+      "identification": {
+        "referenceNumber": "1000000002",
+        "referenceType": "VRN"
+      },
+      "obligationDetails": [
+        {
+          "status": "O",
+          "inboundCorrespondenceFromDate": "2020-02-29",
+          "inboundCorrespondenceToDate": "2020-02-29",
+          "inboundCorrespondenceDateReceived": "2020-02-29",
+          "inboundCorrespondenceDueDate": "2020-02-29",
+          "periodKey": "#001"
+        },
+        {
+          "status": "O",
+          "inboundCorrespondenceFromDate": "2020-02-29",
+          "inboundCorrespondenceToDate": "2020-02-29",
+          "inboundCorrespondenceDateReceived": "2020-02-29",
+          "inboundCorresponde`nceDueDate": "2020-02-29",
+          "periodKey": "#001"
+        }
+      ]
+    }
+  ]
+}
