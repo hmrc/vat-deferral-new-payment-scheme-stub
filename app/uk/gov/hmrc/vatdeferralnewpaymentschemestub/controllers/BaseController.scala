@@ -29,4 +29,12 @@ abstract class BaseController(val cc: ControllerComponents) extends BackendContr
       case _: NullPointerException => NotFound
     }
   }
+
+  def acceptedResponseFromFile(filename: String) = {
+    try {
+      Accepted(fromResource(filename).mkString)
+    } catch {
+      case _: NullPointerException => NotFound
+    }
+  }
 }
