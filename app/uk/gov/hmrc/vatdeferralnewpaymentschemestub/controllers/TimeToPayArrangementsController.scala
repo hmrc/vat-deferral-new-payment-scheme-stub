@@ -25,6 +25,6 @@ class TimeToPayArrangementsController @Inject()(appConfig: AppConfig, cc: Contro
     extends BaseController(cc) {
 
   def get(vrn: String): Action[AnyContent] = Action {
-    responseFromFile(s"api-responses/time-to-pay-arrangement/vrn-$vrn.json")
+    acceptedResponseFromFile(s"api-responses/time-to-pay-arrangement/vrn-$vrn.json")
   }
 }
