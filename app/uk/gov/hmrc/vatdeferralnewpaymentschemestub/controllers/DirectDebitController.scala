@@ -25,6 +25,13 @@ class DirectDebitController @Inject()(appConfig: AppConfig, cc: ControllerCompon
     extends BaseController(cc) {
 
   def get(vrn: String): Action[AnyContent] = Action {
-    responseFromFile(s"api-responses/direct-debit/vrn-$vrn.json")
+    vrn match {
+      case "9999999999" => NotFound // 404
+      case "9999999998" => Unauthorized // 400
+      case "9999999997" => InternalServerError // 500
+      case "9999999996" => ServiceUnavailable // 503
+      case _ =>
+        responseFromFile(s"api-responses/direct-debit/vrn-$vrn.json")
+    }
   }
 }

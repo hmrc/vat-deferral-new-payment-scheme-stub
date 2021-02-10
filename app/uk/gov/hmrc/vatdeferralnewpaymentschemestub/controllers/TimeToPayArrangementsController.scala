@@ -25,6 +25,12 @@ class TimeToPayArrangementsController @Inject()(appConfig: AppConfig, cc: Contro
     extends BaseController(cc) {
 
   def get(vrn: String): Action[AnyContent] = Action {
-    acceptedResponseFromFile(s"api-responses/time-to-pay-arrangement/vrn-$vrn.json")
+    vrn match {
+      case "9999999995" => BadRequest // 400
+      case "9999999994" => InternalServerError // 500
+      case "9999999993" => ServiceUnavailable // 503
+      case _ =>
+        acceptedResponseFromFile(s"api-responses/time-to-pay-arrangement/vrn-$vrn.json")
+    }
   }
 }
