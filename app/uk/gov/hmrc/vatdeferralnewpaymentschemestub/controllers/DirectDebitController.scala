@@ -30,6 +30,10 @@ class DirectDebitController @Inject()(appConfig: AppConfig, cc: ControllerCompon
       case "9999999998" => Unauthorized // 400
       case "9999999997" => InternalServerError // 500
       case "9999999996" => ServiceUnavailable // 503
+      case "000000009" => {
+        Thread.sleep(10000L)
+        responseFromFile(s"api-responses/direct-debit/vrn-$vrn.json")
+      }
       case _ =>
         responseFromFile(s"api-responses/direct-debit/vrn-$vrn.json")
     }
